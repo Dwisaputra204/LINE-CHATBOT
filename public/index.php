@@ -80,7 +80,12 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                 {
                     // send same message as reply to user
                     // $result = $bot->replyText($event['replyToken'], $event['message']['text']);
-                    $result = $bot->replyText($event['replyToken'], "apa cok ??");
+                    $result = $bot->replyText($event['replyToken'],
+                    " 
+                    apa cok ?? 
+                    ganggu aja
+                    "
+                    );
  
  
  
