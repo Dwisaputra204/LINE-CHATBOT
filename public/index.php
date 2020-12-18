@@ -78,9 +78,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
             {
                 if($event['message']['type'] == 'text')
                 {
-                    // send same message as reply to user
-                    // $result = $bot->replyText($event['replyToken'], $event['message']['text']);
-                    if ($event['message']['text'].strtolower() == "start" ) {
+                    if (strtolower($event['message']['text']) == "start" ) {
                         $text = "Hi, Nama saya Dwi. \nSaya adalah BOT yang akan membantu kamu untuk memesan. \n\nCarousel dibawah adalah menu yang tersedia. \n\nTekan ORDER untuk mulai memesan";
 
                         $result = $bot->replyText($event['replyToken'], $text);    
