@@ -83,7 +83,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
 
                         $result = $bot->replyText($event['replyToken'], $text);    
                     } else {
-                        $text = "Tekan START Cok";
+                        $text = "Ketik START untuk menggunakan BOT";
                         $result = $bot->replyText($event['replyToken'], $text);    
                     }
                      
@@ -94,7 +94,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                 }
             }
         }
-        return $response->withStatus(200, 'for Webhook!'); //buat ngasih response 200 ke pas verify webhook
+        return $response->withStatus(200, 'for Webhook!'); 
     }
     return $response->withStatus(400, 'No event sent!');
 });
