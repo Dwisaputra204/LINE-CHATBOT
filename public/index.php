@@ -80,10 +80,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                 {
                     // send same message as reply to user
                     // $result = $bot->replyText($event['replyToken'], $event['message']['text']);
-                    $text = "PETUNJUK /n
-                    - 1. Tekan OK /n
-                    - 2. Tekan KO /n
-                    ";
+                    $text = "PETUNJUK \n - 1. Tekan OK - 2. Tekan KO";
                     $result = $bot->replyText($event['replyToken'], $text);
  
  
@@ -107,6 +104,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
     }
     return $response->withStatus(400, 'No event sent!');
 });
+
 $app->run();
      
 
