@@ -80,7 +80,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                 {
                     // send same message as reply to user
                     // $result = $bot->replyText($event['replyToken'], $event['message']['text']);
-                    $text = "Hi, Nama saya Rina. Saya adalah BOT yang akan membantu kamu untuk memesan :) \n Carousel dibawah adalah menu yang tersedia \n tekan order untuk mulai memesan";
+                    $text = "Hi, Nama saya Rina. \nSaya adalah BOT yang akan membantu kamu untuk memesan :) \n\nCarousel dibawah adalah menu yang tersedia \nTekan ORDER untuk mulai memesan";
 
                     $result = $bot->replyText($event['replyToken'], $text);
  
