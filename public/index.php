@@ -80,20 +80,15 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                 {
                     // send same message as reply to user
                     // $result = $bot->replyText($event['replyToken'], $event['message']['text']);
-                    $text = "Hi, Nama saya Dwi. \nSaya adalah BOT yang akan membantu kamu untuk memesan :) \n\nCarousel dibawah adalah menu yang tersedia \nTekan ORDER untuk mulai memesan";
+                    if ($event['message']['text'].strtolower() == "start" ) {
+                        $text = "Hi, Nama saya Dwi. \nSaya adalah BOT yang akan membantu kamu untuk memesan. \n\nCarousel dibawah adalah menu yang tersedia. \n\nTekan ORDER untuk mulai memesan";
 
-                    $result = $bot->replyText($event['replyToken'], $text);
- 
- 
- 
- 
-                    // or we can use replyMessage() instead to send reply message
-                    // $textMessageBuilder = new TextMessageBuilder($event['message']['text']);
-                    // $result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
- 
- 
- 
- 
+                        $result = $bot->replyText($event['replyToken'], $text);    
+                    } else {
+                        $text = "Tekan START Cok";
+                        $result = $bot->replyText($event['replyToken'], $text);    
+                    }
+                     
                     $response->getBody()->write(json_encode($result->getJSONDecodedBody()));
                     return $response
                         ->withHeader('Content-Type', 'application/json')
