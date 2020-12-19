@@ -40,7 +40,7 @@
               "action": {
                 "type": "uri",
                 "label": "ORDER",
-                "uri": "feedmebot204.herokuapp.com/public/pushmessage"
+                "uri": "http://linecorp.com/"
               },
               "style": "primary"
             }
@@ -86,7 +86,7 @@
               "action": {
                 "type": "uri",
                 "label": "ORDER",
-                "uri": "feedmebot204.herokuapp.com/public/pushmessage"
+                "uri": "http://linecorp.com/"
               },
               "style": "primary"
             }
@@ -132,7 +132,7 @@
               "action": {
                 "type": "uri",
                 "label": "ORDER",
-                "uri": "feedmebot204.herokuapp.com/public/pushmessage"
+                "uri": "http://linecorp.com/"
               },
               "style": "primary"
             }
