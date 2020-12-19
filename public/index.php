@@ -79,13 +79,14 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                 if($event['message']['type'] == 'text')
                 {
                     if (strtolower($event['message']['text']) == "start" ) {
-                        $textMessageBuilder1 = new TextMessageBuilder("Hi, Nama saya Dwi. \nSaya adalah BOT yang akan membantu kamu untuk memesan. \n\nCarousel dibawah adalah menu yang tersedia. \n\nTekan ORDER untuk mulai memesan");
                         
-                        // $text = "Hi, Nama saya Dwi. \nSaya adalah BOT yang akan membantu kamu untuk memesan. \n\nCarousel dibawah adalah menu yang tersedia. \n\nTekan ORDER untuk mulai memesan";
+                        $text = 'Hi, Nama saya Dwi. \nSaya adalah BOT yang akan membantu kamu untuk memesan. \n\nCarousel dibawah adalah menu yang tersedia. \n\nKetik "Menu" untuk memunculkan menu dan Tekan ORDER untuk mulai memesan';
 
-                        // $result = $bot->replyText($event['replyToken'], $text);   
+                        $result = $bot->replyText($event['replyToken'], $text);   
+                        
+                    } elseif (strtolower($event['message']['text']) == "menu") {
                         $flexTemplate = file_get_contents("../flex_message.json"); // template flex message
-                        $flexResult = $httpClient->post(LINEBot::DEFAULT_ENDPOINT_BASE . '/v2/bot/message/reply', [
+                        $result = $httpClient->post(LINEBot::DEFAULT_ENDPOINT_BASE . '/v2/bot/message/reply', [
                             'replyToken' => $event['replyToken'],
                             'messages'   => [
                                 [
@@ -95,12 +96,8 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                                 ]
                             ],
                         ]); 
-                        $textMessageBuilder2 = new TextMessageBuilder($flexResult);
-
-                        $result = new MultiMessageBuilder();
-                        $result->add($textMessageBuilder1);
-                        // $result->add($textMessageBuilder2);
-                    } else {
+                    }
+                    else {
                         $text = "Ketik START untuk menggunakan BOT";
                         $result = $bot->replyText($event['replyToken'], $text);    
                     }
