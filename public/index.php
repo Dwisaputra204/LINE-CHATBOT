@@ -80,7 +80,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                 {
                     if (strtolower($event['message']['text']) == "start" ) {
                         
-                        $text = 'Hi, Nama saya Dwi. \nSaya adalah BOT yang akan membantu kamu untuk memesan. \n\nCarousel dibawah adalah menu yang tersedia. \n\nKetik "Menu" untuk memunculkan menu dan Tekan ORDER untuk mulai memesan';
+                        $text = "Hi, Nama saya Dwi. \nSaya adalah BOT yang akan membantu kamu untuk memesan. \n\nCarousel dibawah adalah menu yang tersedia. \n\nKetik 'Menu' untuk memunculkan menu dan Tekan ORDER untuk mulai memesan";
 
                         $result = $bot->replyText($event['replyToken'], $text);   
                         
