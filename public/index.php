@@ -99,7 +99,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
 
                         $result = new MultiMessageBuilder();
                         $result->add($textMessageBuilder1);
-                        $result->add($textMessageBuilder2);
+                        // $result->add($textMessageBuilder2);
                     } else {
                         $text = "Ketik START untuk menggunakan BOT";
                         $result = $bot->replyText($event['replyToken'], $text);    
