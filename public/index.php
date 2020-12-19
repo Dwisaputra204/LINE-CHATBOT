@@ -79,9 +79,20 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                 if($event['message']['type'] == 'text')
                 {
                     if (strtolower($event['message']['text']) == "start" ) {
-                        $text = "Hi, Nama saya Dwi. \nSaya adalah BOT yang akan membantu kamu untuk memesan. \n\nCarousel dibawah adalah menu yang tersedia. \n\nTekan ORDER untuk mulai memesan";
+                        // $text = "Hi, Nama saya Dwi. \nSaya adalah BOT yang akan membantu kamu untuk memesan. \n\nCarousel dibawah adalah menu yang tersedia. \n\nTekan ORDER untuk mulai memesan";
 
-                        $result = $bot->replyText($event['replyToken'], $text);    
+                        // $result = $bot->replyText($event['replyToken'], $text);   
+                        $flexTemplate = file_get_contents("../flex_message.json"); // template flex message
+                        $result = $httpClient->post(LINEBot::DEFAULT_ENDPOINT_BASE . '/v2/bot/message/reply', [
+                            'replyToken' => $event['replyToken'],
+                            'messages'   => [
+                                [
+                                    'type'     => 'flex',
+                                    'altText'  => 'Test Flex Message',
+                                    'contents' => json_decode($flexTemplate)
+                                ]
+                            ],
+                        ]); 
                     } else {
                         $text = "Ketik START untuk menggunakan BOT";
                         $result = $bot->replyText($event['replyToken'], $text);    
