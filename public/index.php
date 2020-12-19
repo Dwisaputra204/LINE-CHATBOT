@@ -78,7 +78,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
             {
                 if($event['message']['type'] == 'text')
                 {
-                    if (strtolower($event['message']['text']) == "order" ) {
+                    if (strtolower($event['message']['text']) == "start" ) {
                         
                         $text = "Hi, Nama saya Dwi. \nSaya adalah BOT yang akan membantu kamu untuk memesan. \n\nCarousel dibawah adalah menu yang tersedia. \n\nKetik 'Menu' untuk memunculkan menu";
 
@@ -98,7 +98,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                             ],
                         ]); 
                     } 
-                    elseif(strtolower($event['message']['text']) == "Order"){
+                    elseif(strtolower($event['message']['text']) == "order"){
                         $text = "Pesanan anda sedang diproses";
 
                         $result = $bot->replyText($event['replyToken'], $text);   
