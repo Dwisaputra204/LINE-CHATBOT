@@ -96,11 +96,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                                 ]
                             ],
                         ]); 
-                    } elseif (strtolower($event['message']['text']) == "Order") {
-                        $text = "Pesanan anda sedang diproses...";
-
-                        $result = $bot->replyText($event['replyToken'], $text);   
-                    }
+                    } 
                     else {
                         $text = "Ketik START untuk menggunakan BOT";
                         $result = $bot->replyText($event['replyToken'], $text);    
