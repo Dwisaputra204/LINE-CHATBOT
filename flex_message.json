@@ -38,55 +38,9 @@
             {
               "type": "button",
               "action": {
-                "type": "uri",
+                "type": "message",
                 "label": "ORDER",
-                "uri": "https://feedmebot204.herokuapp.com/public/pushmessage"
-              },
-              "style": "primary"
-            }
-          ]
-        }
-      },
-      {
-        "type": "bubble",
-        "size": "micro",
-        "hero": {
-          "type": "image",
-          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip10.jpg",
-          "size": "full",
-          "aspectMode": "cover",
-          "aspectRatio": "320:213"
-        },
-        "body": {
-          "type": "box",
-          "layout": "vertical",
-          "contents": [
-            {
-              "type": "text",
-              "text": "Soto Ayam",
-              "weight": "bold",
-              "size": "md",
-              "wrap": true
-            },
-            {
-              "type": "text",
-              "text": "Rp. 12.000",
-              "size": "sm"
-            }
-          ],
-          "spacing": "sm",
-          "paddingAll": "13px"
-        },
-        "footer": {
-          "type": "box",
-          "layout": "vertical",
-          "contents": [
-            {
-              "type": "button",
-              "action": {
-                "type": "uri",
-                "label": "ORDER",
-                "uri": "https://feedmebot204.herokuapp.com/public/pushmessage"
+                "text" : "Order"
               },
               "style": "primary"
             }
@@ -132,7 +86,53 @@
               "action": {
                 "type": "message",
                 "label": "ORDER",
-                "text" : "Pesanan anda sedang diproses"
+                "text" : "Order"
+              },
+              "style": "primary"
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "size": "micro",
+        "hero": {
+          "type": "image",
+          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip10.jpg",
+          "size": "full",
+          "aspectMode": "cover",
+          "aspectRatio": "320:213"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "Soto Ayam",
+              "weight": "bold",
+              "size": "md",
+              "wrap": true
+            },
+            {
+              "type": "text",
+              "text": "Rp. 12.000",
+              "size": "sm"
+            }
+          ],
+          "spacing": "sm",
+          "paddingAll": "13px"
+        },
+        "footer": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "message",
+                "label": "ORDER",
+                "text" : "Order"
               },
               "style": "primary"
             }

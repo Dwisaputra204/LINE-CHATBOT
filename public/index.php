@@ -80,7 +80,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                 {
                     if (strtolower($event['message']['text']) == "start" ) {
                         
-                        $text = "Hi, Nama saya Dwi. \nSaya adalah BOT yang akan membantu kamu untuk memesan. \n\nCarousel dibawah adalah menu yang tersedia. \n\nKetik 'Menu' untuk memunculkan menu dan Tekan ORDER untuk mulai memesan";
+                        $text = "Hi, Nama saya Dwi. \nSaya adalah BOT yang akan membantu kamu untuk memesan. \n\nCarousel dibawah adalah menu yang tersedia. \n\nKetik 'Menu' untuk memunculkan menu";
 
                         $result = $bot->replyText($event['replyToken'], $text);   
                         
@@ -96,6 +96,10 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                                 ]
                             ],
                         ]); 
+                    } elseif (strtolower($event['message']['text']) == "Order") {
+                        $text = "Pesanan anda sedang diproses...";
+
+                        $result = $bot->replyText($event['replyToken'], $text);   
                     }
                     else {
                         $text = "Ketik START untuk menggunakan BOT";
@@ -114,17 +118,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
     return $response->withStatus(400, 'No event sent!');
 });
 
-$app->get('/pushmessage', function ($req, $response) use ($bot) {
-    // send push message to user
-    $userId = 'U66cae921ba7cf4427c0dd30dd6ee9610';
-    $textMessageBuilder = new TextMessageBuilder('Halo, ini pesan push');
-    $result = $bot->pushMessage($userId, $textMessageBuilder);
- 
-    $response->getBody()->write("Pesan push berhasil dikirim!");
-    return $response
-        ->withHeader('Content-Type', 'application/json')
-        ->withStatus($result->getHTTPStatus());
-});
+
 
 
 $app->run();
