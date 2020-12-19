@@ -130,9 +130,9 @@
             {
               "type": "button",
               "action": {
-                "type": "uri",
+                "type": "message",
                 "label": "ORDER",
-                "uri": "https://feedmebot204.herokuapp.com/public/pushmessage"
+                "text" : "Pesanan anda sedang diproses"
               },
               "style": "primary"
             }
