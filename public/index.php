@@ -84,7 +84,8 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
 
                         $result = $bot->replyText($event['replyToken'], $text);   
                         
-                    } elseif (strtolower($event['message']['text']) == "menu") {
+                    } 
+                    elseif (strtolower($event['message']['text']) == "menu") {
                         $flexTemplate = file_get_contents("../flex_message.json"); // template flex message
                         $result = $httpClient->post(LINEBot::DEFAULT_ENDPOINT_BASE . '/v2/bot/message/reply', [
                             'replyToken' => $event['replyToken'],
@@ -97,6 +98,11 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                             ],
                         ]); 
                     } 
+                    elseif(strtolower($event['message']['text']) == "Order"){
+                        $text = "Pesanan anda sedangan diproses";
+
+                        $result = $bot->replyText($event['replyToken'], $text);   
+                    }
                     else {
                         $text = "Ketik START untuk menggunakan BOT";
                         $result = $bot->replyText($event['replyToken'], $text);    
