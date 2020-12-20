@@ -113,6 +113,10 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                         ->withHeader('Content-Type', 'application/json')
                         ->withStatus($result->getHTTPStatus());
                 }
+                else {
+                    $text = "Ketik START untuk menggunakan BOT";
+                    $result = $bot->replyText($event['replyToken'], $text);    
+                }
             }
         }
         return $response->withStatus(200, 'for Webhook!'); 
