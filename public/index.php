@@ -104,7 +104,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                         $result = $bot->replyText($event['replyToken'], $text);   
                     }
                     else {
-                        $text = "Ketik START untuk menggunakan BOT";
+                        $text = "Keyword yang anda masukkan salah \nKetik START untuk menggunakan BOT";
                         $result = $bot->replyText($event['replyToken'], $text);    
                     }
                      
@@ -114,7 +114,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                         ->withStatus($result->getHTTPStatus());
                 }
                 else {
-                    $text = "Ketik START untuk menggunakan BOT";
+                    $text = "Keyword yang anda masukkan salah \nKetik START untuk menggunakan BOT";
                     $result = $bot->replyText($event['replyToken'], $text);    
                 }
             }
