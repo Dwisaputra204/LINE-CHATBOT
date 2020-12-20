@@ -52,7 +52,7 @@
         "size": "micro",
         "hero": {
           "type": "image",
-          "url": "https://assets.resepedia.id/assets/images/2020/07/1673569850622498-bumbu-bakso-bakar.jpeg",
+          "url": "https://assets.resepedia.id/assets/images/2020/06/1669774418439963-kuah-bakso.jpg",
           "size": "full",
           "aspectMode": "cover",
           "aspectRatio": "320:213"
@@ -63,7 +63,7 @@
           "contents": [
             {
               "type": "text",
-              "text": "Bakso Bakar",
+              "text": "Bakso",
               "weight": "bold",
               "size": "md",
               "wrap": true
