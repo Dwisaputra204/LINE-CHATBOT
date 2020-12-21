@@ -40,7 +40,7 @@
               "action": {
                 "type": "message",
                 "label": "ORDER",
-                "text" : "Order"
+                "text" : "order - soto ayam"
               },
               "style": "primary"
             }
@@ -86,7 +86,7 @@
               "action": {
                 "type": "message",
                 "label": "ORDER",
-                "text" : "Order"
+                "text" : "order - bakso"
               },
               "style": "primary"
             }
@@ -132,7 +132,7 @@
               "action": {
                 "type": "message",
                 "label": "ORDER",
-                "text" : "Order"
+                "text" : "order - sate ayam"
               },
               "style": "primary"
             }
