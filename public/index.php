@@ -22,8 +22,8 @@ $pass_signature = true;
  
  
 // set LINE channel_access_token and channel_secret
-$channel_access_token = "vLli9ReCB/hxGC5DIloxwg6rXmkxVfh582b6G7SaOhUilVtlftETTw5gMwvQQ+c+U2fqwOufDSqxRFOELVln/ZV3mt1g1v1TAOtjAhAJ/EI3FA+cq6znMgBAq7iIFO2ZY/rgIuwGtAWwTl+6hf26+gdB04t89/1O/w1cDnyilFU=";
-$channel_secret = "a328ba5e376bac17ad59fac016d37ee1";
+$channel_access_token = "";
+$channel_secret = "";
  
  
 // inisiasi objek bot
